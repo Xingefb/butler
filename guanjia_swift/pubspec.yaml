@@ -1,0 +1,104 @@
+name: guanjia_swift
+description: A new Flutter project.
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.2
+  dio: ^3.0.9
+  permission_handler: ^5.0.1+1
+  flutter_swiper: ^1.1.6
+  cached_network_image: ^2.2.0+1
+  gbk2utf8: ^1.0.1
+  common_utils: ^1.2.1
+  pull_to_refresh: ^1.6.0
+  shared_preferences: ^0.5.4+8
+  jpush_flutter: ^0.5.5
+  event_bus: ^1.1.1
+  fluttertoast: ^4.0.1
+  flutter_picker: ^1.1.5
+  flutter_slidable: ^0.5.4
+  flutter_html: ^0.11.1
+  flutter_spinkit: ^4.1.2+1
+  flappy_search_bar: ^1.7.2
+  rflutter_alert: ^1.0.3
+  add_calendar_oc: ^1.0.2
+  flutter_cupertino_date_picker: ^1.0.24
+  share: ^0.6.4+3
+  webview_flutter: ^0.3.22+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  json_annotation: ^3.0.1
+  flutter_launcher_icons: ^0.7.5
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon.png"
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  assets:
+    # assets-generator-begin
+    # assets/*
+    - assets/.DS_Store
+    - assets/add_a_select.png
+    - assets/add_zx.png
+    - assets/h_1.png
+    - assets/h_2.png
+    - assets/h_3.png
+    - assets/h_4.png
+    - assets/h_5.png
+    - assets/h_6.png
+    - assets/icon.png
+    - assets/icon1_n.png
+    - assets/icon1_s.png
+    - assets/icon2_n.png
+    - assets/icon2_s.png
+    - assets/icon_n.png
+    - assets/icon_s.png
+    - assets/mine_about_us.png
+    - assets/mine_call.png
+    - assets/mine_numbers.png
+    - assets/mine_review.png
+    - assets/mine_selects.png
+    - assets/mine_setting.png
+    - assets/mine_version.png
+    - assets/no_system_news.png
+    - assets/user_1.png
+    - assets/user_2.png
+    - assets/user_3.png
+    - assets/user_4.png
+    - assets/zx_n.png
+    - assets/zx_s.png
+    # assets-generator-end
+
