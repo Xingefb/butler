@@ -18,10 +18,3 @@ class RefreshMoniList {
   }
 }
 
-class RefreshNews {
-  String text;
-  RefreshNews({ String text}) {
-    this.text = text;
-  }
-}
-

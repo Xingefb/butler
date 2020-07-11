@@ -43,7 +43,6 @@ dependencies:
   add_calendar_oc: ^1.0.2
   flutter_cupertino_date_picker: ^1.0.24
   share: ^0.6.4+3
-  webview_flutter: ^0.3.22+1
 
 dev_dependencies:
   flutter_test:

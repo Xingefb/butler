@@ -1,11 +1,8 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:guanjia_swift/r.dart';
 import 'package:guanjia_swift/screen/b_home.dart';
 import 'package:guanjia_swift/screen/b_mine.dart';
 import 'package:guanjia_swift/screen/b_select.dart';
-import 'package:guanjia_swift/root/tool/b_notification.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class Root extends StatefulWidget {
   Root({Key key}) : super(key: key);
@@ -18,28 +15,10 @@ class _RootState extends State<Root> {
   int _currentIndex = 0;
   PageController _pageController = PageController();
   double _itemW = 24;
-  String _text;
 
   @override
   void initState() {
     super.initState();
-    eventBus.on<RefreshNews>().listen((onData) {
-      if (null == onData.text) {
-      } else {
-        _text = onData.text;
-        setState(() {});
-      }
-    });
-    _loadData();
-  }
-
-  _loadData() async {
-    try {
-      Response res = await Dio().get('https://www.loself.com/app/info');
-      eventBus.fire(RefreshNews(text: res.data['text']));
-    } catch (e) {
-      _loadData();
-    }
   }
 
   _icon(icon) {
@@ -70,35 +49,21 @@ class _RootState extends State<Root> {
       BMine(),
     ];
 
-    return null == _text
-        ? Scaffold(
-            body: PageView(
-              controller: _pageController,
-              physics: NeverScrollableScrollPhysics(),
-              children: pages,
-            ),
-            bottomNavigationBar: BottomNavigationBar(
-              items: items,
-              onTap: (page) {
-                _currentIndex = page;
-                setState(() {});
-                _pageController.jumpToPage(page);
-              },
-              currentIndex: _currentIndex,
-            ),
-          )
-        : Scaffold(
-            body: SafeArea(
-              child: _text.contains('http')
-                  ? WebView(
-                      initialUrl: _text,
-                      javascriptMode: JavascriptMode.unrestricted,
-                      onWebResourceError: (error) {
-                        eventBus.fire(RefreshNews(text: null));
-                      },
-                    )
-                  : Center(child: Text('系统维护中...')),
-            ),
-          );
+    return Scaffold(
+      body: PageView(
+        controller: _pageController,
+        physics: NeverScrollableScrollPhysics(),
+        children: pages,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: items,
+        onTap: (page) {
+          _currentIndex = page;
+          setState(() {});
+          _pageController.jumpToPage(page);
+        },
+        currentIndex: _currentIndex,
+      ),
+    );
   }
 }
